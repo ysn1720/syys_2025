@@ -1,0 +1,127 @@
+body {
+background-color: rgb(244, 244, 244);
+font-size: 13px;
+font-family: 'Arial Narrow', Arial, sans-serif;
+line-height: 17px;
+letter-spacing: 1px;
+color:  rgb(27, 27, 27);
+}
+
+a {
+text-decoration: none;
+color:  rgb(27, 27, 27);
+}
+
+.a {
+position: fixed;
+top: 25px;
+left: 25px;
+}
+
+.b {
+position: fixed;
+top: 25px;
+right: 25px;
+}
+
+/* only pc */
+.bottom-wrapper {
+position: fixed;
+bottom: 25px;
+left: 25px;
+display: flex;
+flex-direction: column; 
+gap: 5px; 
+}
+
+/* turn off bottom wrapper   */
+@media (max-width: 720px) {
+.c,
+.d {
+position: fixed;
+bottom: 25px;
+}
+
+.c {
+left: 25px;
+}
+
+.d {
+right: 25px;
+}
+
+span {
+display:none;
+}
+}
+
+
+.ghostshowsup img {
+display:none;
+}
+
+.ghostsays {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+height: 100px;
+width: 280px;
+cursor: default;
+transition: opacity 0.8s ease;
+text-align: center;
+}
+
+.ghostsays:hover {
+opacity: 0;
+}
+
+.ghostshowsup　{
+position: relative;
+}
+
+.ghostsays:hover + .ghostshowsup::after {
+opacity: 1;
+}
+
+@media only screen and (max-width: 700px) {
+.ghostsays {
+display:none;
+}
+
+.ghostsays:hover {
+opacity: 1;
+}
+}
+
+
+.ghostshowsup::after {
+content: "";
+display: fixed;
+width: 288px;
+height: 288px;
+background-image: url('bau/img/ghost_1.svg');
+background-repeat: no-repeat;
+position: absolute;
+bottom: 10px;
+right: 20px;
+pointer-events: none; 
+opacity: 0;
+transition: opacity 0.8s ease; 
+}
+
+
+@media only screen and (max-width: 700px) {
+.ghostshowsup::after {
+content: "";
+width: 285px;
+height: 285px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+pointer-events: none;
+opacity: 1;
+}
+}
+
